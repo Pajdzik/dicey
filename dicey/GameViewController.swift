@@ -1,10 +1,3 @@
-//
-//  GameViewController.swift
-//  dicey
-//
-//  Created by Kamil  Pajdzik  on 8/26/24.
-//
-
 import UIKit
 import SpriteKit
 import GameplayKit
@@ -16,12 +9,15 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene = SKScene(fileNamed: "GameGrid") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
                 // Present the scene
                 view.presentScene(scene)
+                print("Loaded GameGrid successfully")
+            } else {
+                print("Failed to load GameGrid")
             }
             
             view.ignoresSiblingOrder = true

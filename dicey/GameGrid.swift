@@ -1,14 +1,7 @@
-//
-//  GameScene.swift
-//  dicey
-//
-//  Created by Kamil  Pajdzik  on 8/26/24.
-//
-
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameGrid: SKScene {
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
