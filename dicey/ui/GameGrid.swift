@@ -11,16 +11,22 @@ class GameGrid: SKScene {
     }
     
     func addRectangle() {
-        let rectangleSize = CGSize(width: 100, height: 50)
-        let rectangle = SKShapeNode(rectOf: rectangleSize)
+        let rectSize = CGSize(width: 50, height: 50)
         
-        // Customize the rectangle
+        // Create a path for the rectangle
+        let rectPath = CGPath(rect: CGRect(origin: .zero, size: rectSize), transform: nil)
+        
+        // Create an SKShapeNode with the rectangular path
+        let rectangle = SKShapeNode(path: rectPath)
+        
+        // Set the rectangle's properties
         rectangle.fillColor = .red
         rectangle.strokeColor = .black
         rectangle.lineWidth = 2
         
-        // Position the rectangle (center of the scene in this example)
-        rectangle.position = CGPoint(x: 0, y: 0 )
+        // Position the rectangle in the center of the scene
+        rectangle.position = CGPoint(x: size.width / 2 - rectSize.width / 2,
+                                     y: size.height / 2 - rectSize.height / 2)
         
         // Add the rectangle to the scene
         addChild(rectangle)

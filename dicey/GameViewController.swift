@@ -8,20 +8,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameGrid") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-                print("Loaded GameGrid successfully")
-            } else {
-                print("Failed to load GameGrid")
-            }
-            
+            let scene = GameGrid(size: view.bounds.size)
+            view.presentScene(scene)
             view.ignoresSiblingOrder = true
-            
             view.showsFPS = true
             view.showsNodeCount = true
         }
